@@ -105,6 +105,15 @@ function Contact() {
     }
   };
 
+  const handleGoldLoan = () => {
+    const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+    const message = "Hello, I am interested in applying for a Gold Loan.";
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   const services = [
     "Gold Loan",
     "Gold Loan Eligibility",
@@ -509,7 +518,10 @@ function Contact() {
               </p>
             </div>
             <div className="tfc-cta-row tfc-anim tfc-d4">
-              <Link to="#enquiry-form" className="tfc-btn tfc-btn--gold">Send an Enquiry</Link>
+              {/* <Link to="#enquiry-form" className="tfc-btn tfc-btn--gold">Send an Enquiry</Link> */}
+              <button onClick={handleGoldLoan} className="tfc-btn tfc-btn--gold">
+                Send an Enquiry
+              </button>
               <Link to="tel:+911234567890" className="tfc-btn tfc-btn--outline-light">Call Us</Link>
             </div>
           </div>
@@ -698,10 +710,10 @@ function Contact() {
               <p>Travancore Finance, Trivandrum, Kerala, India</p>
 
               <div className="tfc-map-embed">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.033094260472!2d76.9554659!3d8.496163100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbb0558970e9%3A0xed90b94e44a8f2a1!2sTravancore%20Finance!5e0!3m2!1sen!2sin!4v1786779032034!5m2!1sen!2sin" 
-                  allowFullScreen="" 
-                  loading="lazy" 
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.033094260472!2d76.9554659!3d8.496163100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbb0558970e9%3A0xed90b94e44a8f2a1!2sTravancore%20Finance!5e0!3m2!1sen!2sin!4v1786779032034!5m2!1sen!2sin"
+                  allowFullScreen=""
+                  loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
                   title="Travancore Finance Location - Trivandrum, Kerala"
                 />
@@ -732,7 +744,7 @@ function Contact() {
                 process.
               </p>
               <div className="tfc-cta-row">
-                <Link to="#enquiry-form" className="tfc-btn tfc-btn--outline-navy">Send an Enquiry</Link>
+                {/* <Link to="#enquiry-form" className="tfc-btn tfc-btn--outline-navy">Send an Enquiry</Link> */}
                 <Link to="/services" className="tfc-btn tfc-btn--outline-navy">Explore Our Services</Link>
               </div>
             </div>

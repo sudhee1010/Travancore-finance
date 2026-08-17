@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import WhatsAppFloatingButton from "../../components/WhatsAppFloatingButton";
 
 /**
  * Home page — Travancore Finance (Gold Loan, Trivandrum).
@@ -260,6 +261,15 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 
 function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
+  const handleGoldLoan = () => {
+    const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+    const message = "Hello, I am interested in applying for a Gold Loan.";
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
 
   useEffect(() => {
     document.title = "Gold Loan in Trivandrum, Kerala | Travancore Finance";
@@ -1039,6 +1049,10 @@ function Home() {
 
       {/* ============ HERO ============ */}
       <section className="tf-hero tf-home--on-dark">
+        <div>
+          {/* Your app content */}
+          <WhatsAppFloatingButton />
+        </div>
         <span className="tf-hero__glow" aria-hidden="true" />
         <div className="tf-container tf-hero__grid">
           <div>
@@ -1059,9 +1073,9 @@ function Home() {
               </p>
             </div>
             <div className="tf-cta-row tf-anim-fade-up tf-anim-delay-4">
-              <Link to="/contact" className="tf-btn tf-btn--gold">
-                Apply for a Gold Loan
-              </Link>
+              <button onClick={handleGoldLoan} className="tf-btn tf-btn--gold">
+                Apply for Gold Loan
+              </button>
               <Link to="/contact" className="tf-btn tf-btn--outline-light">
                 Contact Us
               </Link>

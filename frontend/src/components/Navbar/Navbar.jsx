@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import { ROUTES } from "../../constants/routes";
 import { COMPANY_INFO } from "../../constants/companyInfo";
+import EnquiryModal from "../EnquiryModal/EnquiryModal";
 
 const NAV_LINKS = [
   { label: "Home", to: ROUTES.HOME },
@@ -173,9 +174,11 @@ const NAVBAR_STYLES = `
   border: 1px solid var(--tf-ink);
   border-radius: 2px;
   text-decoration: none;
+  font-family: inherit;
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.3px;
+  cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
@@ -319,6 +322,7 @@ const NAVBAR_STYLES = `
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const location = useLocation();
 
   // Add a border/shadow once the page has scrolled past the top.
@@ -375,9 +379,16 @@ function Navbar() {
           </nav>
 
           <div className="navbar__actions">
-            <NavLink to={ROUTES.CONTACT} className="navbar__cta">
+            <button
+              type="button"
+              className="navbar__cta"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsEnquiryOpen(true);
+              }}
+            >
               Enquire Now
-            </NavLink>
+            </button>
 
             <button
               type="button"
@@ -414,13 +425,22 @@ function Navbar() {
               </li>
             ))}
             <li>
-              <NavLink to={ROUTES.CONTACT} className="navbar__cta navbar__cta--mobile">
+              <button
+                type="button"
+                className="navbar__cta navbar__cta--mobile"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsEnquiryOpen(true);
+                }}
+              >
                 Enquire Now
-              </NavLink>
+              </button>
             </li>
           </ul>
         </nav>
       </header>
+
+      <EnquiryModal isOpen={isEnquiryOpen} onClose={() => setIsEnquiryOpen(false)} />
     </>
   );
 }
