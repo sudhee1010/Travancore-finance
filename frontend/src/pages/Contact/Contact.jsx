@@ -105,13 +105,18 @@ function Contact() {
     }
   };
 
-  const handleGoldLoan = () => {
-    const phoneNumber = "91 85907 23351"; // Replace with your WhatsApp number
-    const message = "Hello, I am interested in applying for a Gold Loan.";
+  const handleGoldLoanApply = () => {
+    const phoneNumber = "918590723351"; // Replace with your WhatsApp number
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const message = encodeURIComponent(
+      "Hello, I am interested in applying for a Gold Loan. Please provide me with more details."
+    );
 
-    window.open(whatsappUrl, "_blank");
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const services = [
@@ -519,10 +524,10 @@ function Contact() {
             </div>
             <div className="tfc-cta-row tfc-anim tfc-d4">
               {/* <Link to="#enquiry-form" className="tfc-btn tfc-btn--gold">Send an Enquiry</Link> */}
-              <button onClick={handleGoldLoan} className="tfc-btn tfc-btn--gold">
+              <button onClick={handleGoldLoanApply} className="tfc-btn tfc-btn--gold">
                 Send an Enquiry
               </button>
-              <Link to="tel:+911234567890" className="tfc-btn tfc-btn--outline-light">Call Us</Link>
+              <Link to="tel:+918590723351" className="tfc-btn tfc-btn--outline-light">Call Us</Link>
             </div>
           </div>
 

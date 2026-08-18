@@ -262,13 +262,18 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  const handleGoldLoan = () => {
-    const phoneNumber = "91 85907 23351"; // Replace with your WhatsApp number
-    const message = "Hello, I am interested in applying for a Gold Loan.";
+  const handleGoldLoanApply = () => {
+    const phoneNumber = "918590723351"; // Replace with your WhatsApp number
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const message = encodeURIComponent(
+      "Hello, I am interested in applying for a Gold Loan. Please provide me with more details."
+    );
 
-    window.open(whatsappUrl, "_blank");
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   useEffect(() => {
@@ -1073,7 +1078,7 @@ function Home() {
               </p>
             </div>
             <div className="tf-cta-row tf-anim-fade-up tf-anim-delay-4">
-              <button onClick={handleGoldLoan} className="tf-btn tf-btn--gold">
+              <button onClick={handleGoldLoanApply } className="tf-btn tf-btn--gold">
                 Apply for Gold Loan
               </button>
               <Link to="/contact" className="tf-btn tf-btn--outline-light">
