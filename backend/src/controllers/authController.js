@@ -12,7 +12,8 @@ function getCookieOptions() {
   return {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    // sameSite: "strict",
+    sameSite: "none",
     maxAge,
     path: "/",
   };
@@ -66,7 +67,8 @@ const logout = asyncHandler(async (req, res) => {
   res.clearCookie(COOKIE_NAME, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    // sameSite: "strict",
+    sameSite: "none",
     path: "/",
   });
 
