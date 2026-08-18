@@ -19,7 +19,7 @@ const SERVICES = [
 ];
 
 const CONTACT_INFO = [
-  { icon: "phone", label: "+91 1234567890" },
+  { icon: "phone", label: "+91 85907 23351" },
   { icon: "email", label: "info@travancorefinance.com" },
   { icon: "location", label: "Trivandrum, Kerala, India" },
   { icon: "clock", label: "Mon - Fri: 9:30 AM - 6:00 PM" },

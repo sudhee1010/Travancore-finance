@@ -34,7 +34,7 @@ const WhatsAppFloatingButton = () => {
   }, []);
 
   // WhatsApp number (replace with your number)
-  const phoneNumber = '1234567890'; // Replace with your WhatsApp number
+  const phoneNumber = '+91 85907 23351'; // Replace with your WhatsApp number
   const message = 'Hello! I have a question about your services.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

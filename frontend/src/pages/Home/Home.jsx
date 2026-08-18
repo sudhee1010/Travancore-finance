@@ -263,7 +263,7 @@ function Home() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const handleGoldLoan = () => {
-    const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+    const phoneNumber = "91 85907 23351"; // Replace with your WhatsApp number
     const message = "Hello, I am interested in applying for a Gold Loan.";
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
