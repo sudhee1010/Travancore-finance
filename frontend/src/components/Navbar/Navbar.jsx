@@ -4,6 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import { COMPANY_INFO } from "../../constants/companyInfo";
 import EnquiryModal from "../EnquiryModal/EnquiryModal";
+import logo from "../../assets/logos/travancore-finance-navbar-logo.png.png";
 
 const NAV_LINKS = [
   { label: "Home", to: ROUTES.HOME },
@@ -38,6 +39,14 @@ const NAVBAR_STYLES = `
   border-bottom: 1px solid transparent;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.navbar__logo {
+  display: block;
+  width: 210px;
+  height: auto;
+  max-height: 65px;
+  object-fit: contain;
 }
 
 .navbar--scrolled {
@@ -243,6 +252,13 @@ const NAVBAR_STYLES = `
 }
 
 @media (max-width: 860px) {
+  .navbar__logo {
+    width: 170px;
+    max-height: 55px;
+  }
+}
+
+@media (max-width: 860px) {
   .navbar__nav--desktop,
   .navbar__actions .navbar__cta {
     display: none;
@@ -353,11 +369,11 @@ function Navbar() {
       <header className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
         <div className="navbar__inner">
           <NavLink to={ROUTES.HOME} className="navbar__brand" aria-label={`${COMPANY_INFO.name} home`}>
-            <span className="navbar__brand-mark">TF</span>
-            <span className="navbar__brand-text">
-              <span className="navbar__brand-name">Travancore</span>
-              <span className="navbar__brand-sub">Finance</span>
-            </span>
+            <img
+              src={logo}
+              alt="Travancore Finance"
+              className="navbar__logo"
+            />
           </NavLink>
 
           <nav className="navbar__nav navbar__nav--desktop" aria-label="Primary">
